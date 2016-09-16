@@ -5,7 +5,13 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.net.SocketTimeoutException;
+import java.util.HashSet;
+import java.util.Set;
+
+import net.rb.tacitumcloud.serialization.TCDatabase;
+import net.rb.tacitumcloud.serialization.TCField;
+import net.rb.tacitumcloud.serialization.TCObject;
+import net.rb.tacitumcloud.serialization.Type;
 
 public class Server {
 	private int port;
@@ -15,6 +21,8 @@ public class Server {
 	
 	private final int MAX_PACKET_SIZE = 1024;
 	private byte[] recievedDataBuffer = new byte[MAX_PACKET_SIZE * 10];
+	
+	private Set<ServerClient> clients = new HashSet<ServerClient>();
 	
 	public Server(int port) {
 		this.port = port;
@@ -27,9 +35,11 @@ public class Server {
 			e.printStackTrace();
 			return;
 		}
+		System.out.println("Started server on port " + port + "...");
+		
 		listening = true;
 		
-		listenThread = new Thread(() -> listen());
+		listenThread = new Thread(() -> listen(), "TacitumServer-ListenThread");
 		listenThread.start();
 	}
 	
@@ -47,9 +57,31 @@ public class Server {
 	
 	private void process(DatagramPacket packet) {
 		byte[] data = packet.getData();
+		InetAddress address = packet.getAddress();
+		int port = packet.getPort();
+		dump(packet);
+		
 		if (new String(data, 0, 4).equals("TCDB")) {
-			
+			TCDatabase database = TCDatabase.deserialize(data);
+			process(database);
+		} else if (data[0] == 0x40 && data[1] == 0x40) {
+			switch (data[2]) {
+			case 0x01:
+				clients.add(new ServerClient(packet.getAddress(), packet.getPort()));
+				break;
+			case 2:
+				// Ping
+				break;
+			case 3:
+				// Login
+				break;
+			}
 		}
+	}
+	
+	private void process(TCDatabase database) {
+		System.out.println("Received database");
+		dump(database);
 	}
 	
 	public void send(byte[] data, InetAddress address, int port) {
@@ -60,5 +92,78 @@ public class Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void dump(DatagramPacket packet) {
+		byte[] data = packet.getData();
+		InetAddress address = packet.getAddress();
+		int port = packet.getPort();
+		
+		System.out.println("----------------------------------------------");
+		System.out.println("PACKET: ");
+		System.out.println("\t" + address.getHostAddress() + ":" + port);
+		System.out.println();
+		System.out.println("\tContents:");
+		System.out.print("\t\t");
+		
+		for (int i = 0; i < packet.getLength(); i++) {
+			System.out.printf("%x ", data[i]);
+			if ((i + 1) % 16 == 0)
+				System.out.print("\n\t\t");
+		}
+		System.out.println();
+		System.out.println("----------------------------------------------");
+	}
+	
+	private void dump(TCDatabase database) {
+		System.out.println("----------------------------------------------");
+		System.out.println("                 TCDatabase                   ");
+		System.out.println("----------------------------------------------");
+		System.out.println("Name: " + database.getName());
+		System.out.println("Size: " + database.getSize());
+		System.out.println("Object Count: " + database.objects.size());
+		System.out.println();
+		for (TCObject object : database.objects) {
+			System.out.println("\tObject:");
+			System.out.println("\tName: " + object.getName());
+			System.out.println("\tSize: " + object.getSize());
+			System.out.println("\tField Count: " + object.fields.size());
+			for (TCField field : object.fields) {
+				System.out.println("\t\tField:");
+				System.out.println("\t\tName: " + field.getName());
+				System.out.println("\t\tSize: " + field.getSize());
+				String data = "";
+				switch (field.type) {
+				case Type.BYTE:
+					data += field.getByte();
+					break;
+				case Type.SHORT:
+					data += field.getShort();
+					break;
+				case Type.CHAR:
+					data += field.getChar();
+					break;
+				case Type.INT:
+					data += field.getInt();
+					break;
+				case Type.LONG:
+					data += field.getLong();
+					break;
+				case Type.FLOAT:
+					data += field.getFloat();
+					break;
+				case Type.DOUBLE:
+					data += field.getDouble();
+					break;
+				case Type.BOOLEAN:
+					data += field.getBoolean();
+					break;
+				}
+				System.out.println("\t\tData: " + data);
+				System.out.println();
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------");
 	}
 }

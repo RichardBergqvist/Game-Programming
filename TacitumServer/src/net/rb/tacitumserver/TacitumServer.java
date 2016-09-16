@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 
 public class TacitumServer {
 	public static void main(String[] args) {
-		Server server = new Server(9750);
+		Server server = new Server(9754);
 		server.start();
 		
 		InetAddress address = null;
