@@ -12,29 +12,34 @@ public class SpriteSheet {
 	private int width, height;
 	public int[] pixels;
 	
-	public static SpriteSheet tiles 	  		 = new SpriteSheet("/textures/sheets/spritesheet.png", 256);
-	public static SpriteSheet spawn_level 		 = new SpriteSheet("/textures/sheets/spawn_level.png", 48);
-	public static SpriteSheet trees				 = new SpriteSheet("/textures/sheets/trees.png", 48);
-	public static SpriteSheet wizard_projectiles = new SpriteSheet("/textures/sheets/projectiles/wizard_projectiles.png", 48);
-	public static SpriteSheet archer_projectiles = new SpriteSheet("/textures/sheets/projectiles/archer_projectiles.png", 48);
+	public static SpriteSheet tiles 	  		 = new SpriteSheet("/textures/misc/spritesheet.png", 256);
+	public static SpriteSheet spawn_level 		 = new SpriteSheet("/textures/blocks/spawn_level.png", 48);
+	public static SpriteSheet wizard_projectiles = new SpriteSheet("/textures/projectiles/wizard_projectiles.png", 48);
+	public static SpriteSheet archer_projectiles = new SpriteSheet("/textures/projectiles/archer_projectiles.png", 48);
 	
-	public static SpriteSheet player 			 = new SpriteSheet("/textures/sheets/player.png", 128, 96);
+	public static SpriteSheet player 			 = new SpriteSheet("/textures/mobs/player/player.png", 128, 96);
 	public static SpriteSheet player_down        = new SpriteSheet(player, 0, 0, 1, 3, 32);
 	public static SpriteSheet player_up          = new SpriteSheet(player, 1, 0, 1, 3, 32);
 	public static SpriteSheet player_left        = new SpriteSheet(player, 2, 0, 1, 3, 32);
 	public static SpriteSheet player_right       = new SpriteSheet(player, 3, 0, 1, 3, 32);
 	
-	public static SpriteSheet dummy 			 = new SpriteSheet("/textures/sheets/player.png", 128, 96);
-	public static SpriteSheet dummy_down         = new SpriteSheet(dummy, 0, 0, 1, 3, 32);
-	public static SpriteSheet dummy_up           = new SpriteSheet(dummy, 1, 0, 1, 3, 32);
-	public static SpriteSheet dummy_left         = new SpriteSheet(dummy, 2, 0, 1, 3, 32);
-	public static SpriteSheet dummy_right        = new SpriteSheet(dummy, 3, 0, 1, 3, 32);
+	public static SpriteSheet archer 			 = new SpriteSheet("/textures/mobs/archer.png", 256, 192);
+	public static SpriteSheet archer_down        = new SpriteSheet(archer, 0, 0, 1, 3, 64);
+	public static SpriteSheet archer_up          = new SpriteSheet(archer, 1, 0, 1, 3, 64);
+	public static SpriteSheet archer_left        = new SpriteSheet(archer, 2, 0, 1, 3, 64);
+	public static SpriteSheet archer_right       = new SpriteSheet(archer, 3, 0, 1, 3, 64);
 	
-	public static SpriteSheet archer 			 = new SpriteSheet("/textures/sheets/archer.png", 128, 96);
-	public static SpriteSheet archer_down         = new SpriteSheet(archer, 0, 0, 1, 3, 32);
-	public static SpriteSheet archer_up           = new SpriteSheet(archer, 1, 0, 1, 3, 32);
-	public static SpriteSheet archer_left         = new SpriteSheet(archer, 2, 0, 1, 3, 32);
-	public static SpriteSheet archer_right        = new SpriteSheet(archer, 3, 0, 1, 3, 32);
+	public static SpriteSheet zombie 			 = new SpriteSheet("/textures/mobs/zombie/zombie_female.png", 128, 96);
+	public static SpriteSheet zombie_down        = new SpriteSheet(zombie, 0, 0, 1, 3, 32);
+	public static SpriteSheet zombie_up          = new SpriteSheet(zombie, 1, 0, 1, 3, 32);
+	public static SpriteSheet zombie_left        = new SpriteSheet(zombie, 2, 0, 1, 3, 32);
+	public static SpriteSheet zombie_right       = new SpriteSheet(zombie, 3, 0, 1, 3, 32);
+	
+	public static SpriteSheet skeleton 			 = new SpriteSheet("/textures/mobs/skeleton/skeleton.png", 256, 192);
+	public static SpriteSheet skeleton_down      = new SpriteSheet(skeleton, 0, 0, 1, 3, 64);
+	public static SpriteSheet skeleton_up        = new SpriteSheet(skeleton, 1, 0, 1, 3, 64);
+	public static SpriteSheet skeleton_left      = new SpriteSheet(skeleton, 2, 0, 1, 3, 64);
+	public static SpriteSheet skeleton_right     = new SpriteSheet(skeleton, 3, 0, 1, 3, 64);
 	
 	private Sprite[] sprites;
 	

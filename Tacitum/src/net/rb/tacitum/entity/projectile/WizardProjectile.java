@@ -7,17 +7,18 @@ import net.rb.tacitum.graphics.Sprite;
 public class WizardProjectile extends Projectile {
 	public static final int FIRE_RATE = 20;
 	
-	public WizardProjectile(double x, double y, double dir) {
+	public WizardProjectile(double x, double y, double dir, Type type) {
 		super(x, y, dir);
 		range = 200;
 		speed = 5;
 		damage = 20;
-		sprite = Sprite.wizard;
+		sprite = type.getSprite();
 		
 		nx = speed * Math.cos(angle);
 		ny = speed * Math.sin(angle);
 	}
 	
+	// TODO: Fix different particles for different projectiles
 	public void update() {
 		if (level.tileCollision((int) (x + nx), (int) (y + ny), 8, 4, 4)) {
 			level.add(new ParticleSpawner((int) x, (int) y, 30, 30, level, Sprite.particle_water));
@@ -42,5 +43,34 @@ public class WizardProjectile extends Projectile {
 	
 	public void render(Screen screen) {
 		screen.renderProjectile((int) x - 11, (int) y - 2, this);
+	}
+	
+	public enum Type {
+		WATER("water", Sprite.wizard_water, 7),
+		FIRE("fire", Sprite.wizard_fire, 3),
+		AIR("air", Sprite.wizard_air, 1),
+		EARTH("earth", Sprite.wizard_earth, 4);
+		
+		private String name;
+		private Sprite sprite;
+		private int cost;
+		
+		Type(String name, Sprite sprite, int cost) {
+			this.name = name;
+			this.sprite = sprite;
+			this.cost = cost;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public Sprite getSprite() {
+			return sprite;
+		}
+		
+		public int getCost() {
+			return cost;
+		}
 	}
 }

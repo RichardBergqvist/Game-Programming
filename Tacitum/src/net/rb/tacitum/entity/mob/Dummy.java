@@ -5,10 +5,10 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 
 public class Dummy extends Mob {
-	private AnimatedSprite dummy_down  = new AnimatedSprite(SpriteSheet.dummy_down, 32, 32, 3);
-	private AnimatedSprite dummy_up    = new AnimatedSprite(SpriteSheet.dummy_up, 32, 32, 3);
-	private AnimatedSprite dummy_left  = new AnimatedSprite(SpriteSheet.dummy_left, 32, 32, 3);
-	private AnimatedSprite dummy_right = new AnimatedSprite(SpriteSheet.dummy_right, 32, 32, 3);
+	private AnimatedSprite dummy_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
+	private AnimatedSprite dummy_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);
+	private AnimatedSprite dummy_left  = new AnimatedSprite(SpriteSheet.player_left, 32, 32, 3);
+	private AnimatedSprite dummy_right = new AnimatedSprite(SpriteSheet.player_right, 32, 32, 3);
 	
 	private AnimatedSprite dummySprite = dummy_down;
 	

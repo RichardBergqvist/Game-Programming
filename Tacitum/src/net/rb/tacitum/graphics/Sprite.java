@@ -22,10 +22,12 @@ public class Sprite {
 	public static Sprite spawn_wall3 = new Sprite(16, 1, 1, SpriteSheet.spawn_level);
 	public static Sprite spawn_wall4 = new Sprite(16, 1, 2, SpriteSheet.spawn_level);
 	public static Sprite spawn_floor = new Sprite(16, 2, 1, SpriteSheet.spawn_level);
-	public static Sprite spawn_tree  = new Sprite(16, 0, 0, SpriteSheet.trees);
 	
 	/** Projectile Sprites **/
-	public static Sprite wizard = new Sprite(16, 1, 0, SpriteSheet.wizard_projectiles);
+	public static Sprite wizard_water = new Sprite(16, 1, 0, SpriteSheet.wizard_projectiles);
+	public static Sprite wizard_fire = new Sprite(16, 2, 0, SpriteSheet.wizard_projectiles);
+	public static Sprite wizard_air = new Sprite(16, 0, 1, SpriteSheet.wizard_projectiles);
+	public static Sprite wizard_earth = new Sprite(16, 0, 0, SpriteSheet.wizard_projectiles);
 	public static Sprite archer = new Sprite(16, 0, 0, SpriteSheet.archer_projectiles);
 	
 	/** Particle Sprites **/

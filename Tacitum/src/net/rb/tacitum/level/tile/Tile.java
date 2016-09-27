@@ -24,8 +24,6 @@ public class Tile {
 	public static Tile spawn_wall3_tile = new SpawnWallTile(Sprite.spawn_wall3);
 	public static Tile spawn_wall4_tile = new SpawnWallTile(Sprite.spawn_wall4);
 	public static Tile spawn_floor_tile = new SpawnFloorTile(Sprite.spawn_floor);
-	// TODO: Create class for trees.
-	public static Tile spawn_tree_tile  = new SpawnHedgeTile(Sprite.spawn_tree);
 	
 	public final static int col_spawn_grass = 0xFF00FF00;
 	public final static int col_spawn_hedge = 0xFF007F0E;
@@ -35,7 +33,6 @@ public class Tile {
 	public final static int col_spawn_wall3 = 0xFF404040;
 	public final static int col_spawn_wall4 = 0xFF5B5B5B;
 	public final static int col_spawn_floor = 0xFF724715;
-	public final static int col_spawn_tree  = 0xFF007F0E;
 	
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;

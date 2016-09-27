@@ -117,15 +117,15 @@ public class Screen {
 	public void renderMob(int xp, int yp, Mob mob) {
 		xp -= xOffset;
 		yp -= yOffset;
-		for (int y = 0; y < 32; y++) {
+		for (int y = 0; y < mob.getSprite().getHeight(); y++) {
 			int ya = y + yp;
 			int ys = y;
-			for (int x = 0; x < 32; x++) {
+			for (int x = 0; x < mob.getSprite().getWidth(); x++) {
 				int xa = x + xp;
 				int xs = x;
-				if (xa < -32 || xa >= width || ya < 0 || ya >= height) break;
+				if (xa < -mob.getSprite().getWidth() || xa >= width || ya < 0 || ya >= height) break;
 				if (xa < 0) xa = 0;
-				int col = mob.getSprite().pixels[xs + ys * 32];
+				int col = mob.getSprite().pixels[xs + ys * mob.getSprite().SIZE];
 				if (mob instanceof Chaser || mob instanceof Star) {
 					if (col == 0xFF326EDD) col = 0xFF0000;  // Eyes
 					if (col == 0xFF7D4F18) col = 0x404040;	// Hair
@@ -151,15 +151,15 @@ public class Screen {
 	public void renderMob(int xp, int yp, Sprite sprite) {
 		xp -= xOffset;
 		yp -= yOffset;
-		for (int y = 0; y < 32; y++) {
+		for (int y = 0; y < sprite.getHeight(); y++) {
 			int ya = y + yp;
 			int ys = y;
-			for (int x = 0; x < 32; x++) {
+			for (int x = 0; x < sprite.getWidth(); x++) {
 				int xa = x + xp;
 				int xs = x;
-				if (xa < -32 || xa >= width || ya < 0 || ya >= height) break;
+				if (xa < -sprite.getWidth() || xa >= width || ya < 0 || ya >= height) break;
 				if (xa < 0) xa = 0;
-				int col = sprite.pixels[xs + ys * 32];
+				int col = sprite.pixels[xs + ys * sprite.SIZE];
 				if (col != ALPHA_COLOR) pixels[xa + ya * width] = col;
 			}
 		}

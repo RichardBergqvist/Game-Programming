@@ -1,7 +1,6 @@
 package net.rb.tacitum.events.types;
 
 import net.rb.tacitum.events.Event;
-import net.rb.tacitum.events.Event.Type;
 
 public class MouseButtonEvent extends Event {
 	protected int button;

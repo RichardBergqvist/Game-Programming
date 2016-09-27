@@ -9,12 +9,12 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.util.Vector2i;
 
-public class Archer extends Mob {
-	// TODO: Replace with arcer sprites 
-	private AnimatedSprite archer_down  = new AnimatedSprite(SpriteSheet.dummy_down, 32, 32, 3);
-	private AnimatedSprite archer_up    = new AnimatedSprite(SpriteSheet.dummy_up, 32, 32, 3);
-	private AnimatedSprite archer_left  = new AnimatedSprite(SpriteSheet.dummy_left, 32, 32, 3);
-	private AnimatedSprite archer_right = new AnimatedSprite(SpriteSheet.dummy_right, 32, 32, 3);
+public class ArcherMob extends Mob {
+	// TODO: Replace with archer sprites 
+	private AnimatedSprite archer_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
+	private AnimatedSprite archer_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);
+	private AnimatedSprite archer_left  = new AnimatedSprite(SpriteSheet.player_left, 32, 32, 3);
+	private AnimatedSprite archer_right = new AnimatedSprite(SpriteSheet.player_right, 32, 32, 3);
 	                       
 	private AnimatedSprite archerSprite = archer_down;
 	
@@ -22,7 +22,7 @@ public class Archer extends Mob {
 	private int xa = 0, ya = 0;
 	private int fireRate = 0;
 	
-	public Archer(int x, int y) {
+	public ArcherMob(int x, int y) {
 		this.x = x << 4;
 		this.y = y << 4;
 		this.fireRate = ArcherProjectile.FIRE_RATE;
@@ -92,7 +92,7 @@ public class Archer extends Mob {
 			double dx = closest.getX() - x;
 			double dy = closest.getY() - y;
 			double dir = Math.atan2(dy, dx);
-			shoot(x, y, dir, new ArcherProjectile(x, y, dir));
+			shoot(x, y, dir, new ArcherProjectile(x, y, dir, ArcherProjectile.Type.WOOD));
 			fireRate = ArcherProjectile.FIRE_RATE;
 		}
 	}

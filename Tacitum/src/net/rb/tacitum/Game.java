@@ -12,7 +12,9 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import net.rb.tacitum.entity.mob.Player;
+import net.rb.tacitum.entity.mob.player.Mage;
+import net.rb.tacitum.entity.mob.player.Player;
+import net.rb.tacitum.entity.projectile.WizardProjectile;
 import net.rb.tacitum.events.Event;
 import net.rb.tacitum.events.EventListener;
 import net.rb.tacitum.graphics.Screen;
@@ -22,7 +24,11 @@ import net.rb.tacitum.input.Keyboard;
 import net.rb.tacitum.input.Mouse;
 import net.rb.tacitum.level.Level;
 import net.rb.tacitum.level.TileCoordinate;
+import net.rb.tacitum.net.Client;
 import net.rb.tacitum.net.player.PlayerMP;
+import net.rb.tacitumcloud.serialization.TCDatabase;
+import net.rb.tacitumcloud.serialization.TCField;
+import net.rb.tacitumcloud.serialization.TCObject;
 
 public class Game extends Canvas implements Runnable, EventListener {
 	/** This line has no effect on the game whatsoever. **/
@@ -38,9 +44,9 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static final String TITLE = "Tacitum";
 	
 	/** These strings should be changed every time the game updates, as they contain all version info. **/
-	public static final String VERSION = "Pre-Alpha 1.00";
-	public static final String RELEASE_DATE = "Aug 11 2016";
-	public static final String RELEASE_TIME = "00:08:00";
+	public static final String VERSION = "Pre-Alpha 5.00";
+	public static final String RELEASE_DATE = "Sep 4 2016";
+	public static final String RELEASE_TIME = "17:00:00";
 	
 	/** These strings should not change as they do not hold version info. **/
 	public static final String RELEASE = "(" + RELEASE_DATE + "/" + RELEASE_TIME + ")[PUBLIC]";
@@ -59,24 +65,32 @@ public class Game extends Canvas implements Runnable, EventListener {
 	private int fps = 0;
 	
 	private Screen screen;
-	private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	private BufferedImage image;
+	private int[] pixels;
 	
 	private List<Layer> layerStack = new ArrayList<Layer>();
 	
 	public Game() {
-		Dimension size = new Dimension(width * scale + 80 * 3, height * scale);
-		setPreferredSize(size);
+		setSize();
 		
 		screen = new Screen(width, height);
 		uiManager = new UIManager();
 		frame = new JFrame();
 		key = new Keyboard();
+		
+		Client client = new Client("localhost", 9754);
+		if (!client.connect()) {
+			
+		}
+		
+		TCDatabase db = TCDatabase.deserializeFromFile("res/data/screen.bin");
+		//client.send(db);
+		
 		level = Level.spawn;
 		addLayer(level);
-		
 		TileCoordinate playerSpawn = new TileCoordinate(20, 57);
-		player = new Player("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key);
+		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
+		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
 		level.addPlayer(player);
 		level.addPlayer(new PlayerMP());
 	
@@ -85,6 +99,35 @@ public class Game extends Canvas implements Runnable, EventListener {
 		Mouse mouse = new Mouse(this);
 		addMouseListener(mouse);
 		addMouseMotionListener(mouse);
+		
+		save();
+	}
+	
+	private void setSize() {
+		TCDatabase db = TCDatabase.deserializeFromFile("res/data/screen.bin");
+		if (db != null) {
+			TCObject object = db.findObject("Resolution");
+			width = object.findField("width").getInt();
+			height = object.findField("height").getInt();
+			scale = object.findField("scale").getInt();
+		}
+		
+		Dimension size = new Dimension(width * scale + 80 * 3, height * scale);
+		setPreferredSize(size);
+		
+		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	}
+	
+	private void save() {
+		TCDatabase db = new TCDatabase("Screen");
+		TCObject object = new TCObject("Resolution");
+		object.addField(TCField.Int("width", width));
+		object.addField(TCField.Int("height", height));
+		object.addField(TCField.Int("scale", scale));
+		db.addObject(object);
+		
+		db.serializeToFile("res/data/screen.bin");
 	}
 	
 	public static int getWindowWidth() {

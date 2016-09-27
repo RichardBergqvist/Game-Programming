@@ -8,29 +8,20 @@ public abstract class Mob extends Entity {
 	protected boolean moving = false;
 	protected boolean walking = false;
 	protected int health;
+	protected int shield;
 	protected int resource;
-	protected int playerLevel;
-	protected int playerLVL;
 	protected int cost;
 	
 	public void setHealth(int health) {
 		this.health = health;
 	}
 	
-	public void setResource(int resource) {
-		this.resource = resource;
-	}
-	
-	public void setLevel(int level) {
-		this.playerLVL = level;
+	public void setShield(int shield) {
+		this.shield = shield;
 	}
 	
 	public void setCost(int cost) {
 		this.cost = cost;
-	}
-	
-	public int getLevel() {
-		return playerLVL;
 	}
 	
 	protected enum Direction {
@@ -98,13 +89,6 @@ public abstract class Mob extends Entity {
 		resource -= 0;	
 		else
 		resource -= cost;
-		
-		playerLevel += 1;
-		if (playerLevel >= 100)
-		{
-			playerLVL += 1;
-			playerLevel = 0;
-		}
 	}
 	
 	private boolean collision(double xa, double ya) {

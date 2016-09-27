@@ -7,7 +7,7 @@ import java.util.List;
 
 import net.rb.tacitum.entity.Entity;
 import net.rb.tacitum.entity.mob.Mob;
-import net.rb.tacitum.entity.mob.Player;
+import net.rb.tacitum.entity.mob.player.Player;
 import net.rb.tacitum.entity.particle.Particle;
 import net.rb.tacitum.entity.projectile.Projectile;
 import net.rb.tacitum.entity.spawner.Spawner;
@@ -39,6 +39,7 @@ public class Level extends Layer {
 	};
 	
 	public static Level spawn = new SpawnLevel("/levels/spawn.png");
+	public static Level monx = new SpawnLevel("/levels/monx.png");
 	
 	public Level(int width, int height) {
 		this.width = width;
@@ -281,7 +282,6 @@ public class Level extends Layer {
 		if (tiles[x + y * width] == Tile.col_spawn_wall3) return Tile.spawn_wall3_tile;
 		if (tiles[x + y * width] == Tile.col_spawn_wall4) return Tile.spawn_wall4_tile;
 		if (tiles[x + y * width] == Tile.col_spawn_floor) return Tile.spawn_floor_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_tree)  return Tile.spawn_tree_tile;
 		return Tile.void_tile;
 	}
 }

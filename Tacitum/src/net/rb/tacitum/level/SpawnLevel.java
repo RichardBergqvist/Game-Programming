@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import net.rb.tacitum.entity.mob.*;
+
 public class SpawnLevel extends Level {
 	public SpawnLevel(String path) {
 		super(path);
@@ -23,11 +25,11 @@ public class SpawnLevel extends Level {
 			System.out.println("Exception: Could not load level file!");
 		}
 		
+		add(new Zombie(20, 55));
+		add(new Skeleton(21, 56));
 		//add(new Dummy(20, 55));
 		//add(new Shooter(20, 50));
-		//add(new Chaser(20, 50));
-	//	add(new Star(20, 53));
-	//	add(new Archer(25, 53));
-		//add(new ShadowKing(20, 55));
+		add(new Star(20, 53));
+		//add(new ArcherMob(25, 53));
 	}
 }

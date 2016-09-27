@@ -6,16 +6,17 @@ import net.rb.tacitum.entity.Entity;
 import net.rb.tacitum.entity.particle.Particle;
 import net.rb.tacitum.entity.projectile.Projectile;
 import net.rb.tacitum.entity.projectile.WizardProjectile;
+import net.rb.tacitum.entity.projectile.WizardProjectile.Type;
 import net.rb.tacitum.graphics.AnimatedSprite;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.util.Vector2i;
 
 public class Shooter extends Mob {
-	private AnimatedSprite shooter_down  = new AnimatedSprite(SpriteSheet.dummy_down, 32, 32, 3);
-	private AnimatedSprite shooter_up    = new AnimatedSprite(SpriteSheet.dummy_up, 32, 32, 3);
-	private AnimatedSprite shooter_left  = new AnimatedSprite(SpriteSheet.dummy_left, 32, 32, 3);
-	private AnimatedSprite shooter_right = new AnimatedSprite(SpriteSheet.dummy_right, 32, 32, 3);
+	private AnimatedSprite shooter_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
+	private AnimatedSprite shooter_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);
+	private AnimatedSprite shooter_left  = new AnimatedSprite(SpriteSheet.player_left, 32, 32, 3);
+	private AnimatedSprite shooter_right = new AnimatedSprite(SpriteSheet.player_right, 32, 32, 3);
 	                       
 	private AnimatedSprite shooterSprite = shooter_down;
 	
@@ -88,7 +89,7 @@ public class Shooter extends Mob {
 			double dx = rand.getX() - x;
 			double dy = rand.getY() - y;
 			double dir = Math.atan2(dy, dx);
-			shoot(x, y, dir, new WizardProjectile(x, y, dir));
+			shoot(x, y, dir, new WizardProjectile(x, y, dir, Type.EARTH));
 			fireRate = WizardProjectile.FIRE_RATE;
 		}
 	}
@@ -113,7 +114,7 @@ public class Shooter extends Mob {
 				double dx = closest.getX() - x;
 				double dy = closest.getY() - y;
 				double dir = Math.atan2(dy, dx);
-				shoot(x, y, dir, new WizardProjectile(x, y, dir));
+				shoot(x, y, dir, new WizardProjectile(x, y, dir, Type.EARTH));
 				fireRate = WizardProjectile.FIRE_RATE;
 			}
 		}

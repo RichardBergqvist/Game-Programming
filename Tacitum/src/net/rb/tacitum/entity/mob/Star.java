@@ -9,10 +9,10 @@ import net.rb.tacitum.level.Node;
 import net.rb.tacitum.util.Vector2i;
 
 public class Star extends Mob {
-	private AnimatedSprite star_down  = new AnimatedSprite(SpriteSheet.dummy_down, 32, 32, 3);
-	private AnimatedSprite star_up    = new AnimatedSprite(SpriteSheet.dummy_up, 32, 32, 3);
-	private AnimatedSprite star_left  = new AnimatedSprite(SpriteSheet.dummy_left, 32, 32, 3);
-	private AnimatedSprite star_right = new AnimatedSprite(SpriteSheet.dummy_right, 32, 32, 3);
+	private AnimatedSprite star_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
+	private AnimatedSprite star_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);
+	private AnimatedSprite star_left  = new AnimatedSprite(SpriteSheet.player_left, 32, 32, 3);
+	private AnimatedSprite star_right = new AnimatedSprite(SpriteSheet.player_right, 32, 32, 3);
 	                       
 	private AnimatedSprite starSprite = star_down;
 	

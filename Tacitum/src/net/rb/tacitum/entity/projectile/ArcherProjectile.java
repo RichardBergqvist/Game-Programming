@@ -6,12 +6,12 @@ import net.rb.tacitum.graphics.Sprite;
 public class ArcherProjectile extends Projectile {
 	public static final int FIRE_RATE = 80;
 	
-	public ArcherProjectile(double x, double y, double dir) {
+	public ArcherProjectile(double x, double y, double dir, Type type) {
 		super(x, y, dir);
 		range = 400;
 		speed = 7;
 		damage = 80;
-		sprite = Sprite.rotate(Sprite.archer, angle);
+		sprite = Sprite.rotate(type.getSprite(), angle);
 		
 		nx = speed * Math.cos(angle);
 		ny = speed * Math.sin(angle);
@@ -39,5 +39,28 @@ public class ArcherProjectile extends Projectile {
 	
 	public void render(Screen screen) {
 		screen.renderProjectile((int) x - 11, (int) y - 2, this);
+	}
+	
+	// TODO: Add different sprites
+	public enum Type {
+		WOOD("water", Sprite.archer),
+		FIRE("fire", Sprite.archer),
+		POISON("air", Sprite.archer);
+		
+		private String name;
+		private Sprite sprite;
+		
+		Type(String name, Sprite sprite) {
+			this.name = name;
+			this.sprite = sprite;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public Sprite getSprite() {
+			return sprite;
+		}
 	}
 }
