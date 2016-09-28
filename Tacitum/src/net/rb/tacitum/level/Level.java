@@ -38,8 +38,9 @@ public class Level extends Layer {
 		}
 	};
 	
-	public static Level spawn = new SpawnLevel("/levels/spawn.png");
-	public static Level monx = new SpawnLevel("/levels/monx.png");
+	public static final Level SPAWN = new SpawnLevel("/levels/spawn.png");
+	public static final Level MONX = new SpawnLevel("/levels/monx.png");
+	public static final Level SPACE = new SpaceLevel("/levels/space.png");
 	
 	public Level(int width, int height) {
 		this.width = width;
@@ -273,15 +274,26 @@ public class Level extends Layer {
 	}
 	
 	public Tile getTile(int x, int y) {
-		if (x < 0 || y < 0 || x >= width || y >= height) return Tile.void_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_grass) return Tile.spawn_grass_tile;
-		//if (tiles[x + y * width] == Tile.col_spawn_hedge) return Tile.spawn_hedge_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_water) return Tile.spawn_water_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_wall1) return Tile.spawn_wall1_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_wall2) return Tile.spawn_wall2_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_wall3) return Tile.spawn_wall3_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_wall4) return Tile.spawn_wall4_tile;
-		if (tiles[x + y * width] == Tile.col_spawn_floor) return Tile.spawn_floor_tile;
+		
+		if (this == SPACE) {
+			if (x < 0 || y < 0 || x >= width || y >= height) return Tile.space_tile;
+			if (tiles[x + y * width] == SpaceLevel.col_space_wall) return Tile.space_wall;
+			if (tiles[x + y * width] == SpaceLevel.col_space_wall1) return Tile.space_wall1;
+			if (tiles[x + y * width] == SpaceLevel.col_space_star) return Tile.grass;
+			if (tiles[x + y * width] == SpaceLevel.col_space_floor) return Tile.space_floor;
+		}
+		
+		if (this == SPAWN) {
+			if (x < 0 || y < 0 || x >= width || y >= height) return Tile.void_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_grass) return Tile.spawn_grass_tile;
+			//if (tiles[x + y * width] == Tile.col_spawn_hedge) return Tile.spawn_hedge_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_water) return Tile.spawn_water_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall1) return Tile.spawn_wall1_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall2) return Tile.spawn_wall2_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall3) return Tile.spawn_wall3_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall4) return Tile.spawn_wall4_tile;
+			if (tiles[x + y * width] == SpawnLevel.col_spawn_floor) return Tile.spawn_floor_tile;
+		}
 		return Tile.void_tile;
 	}
 }

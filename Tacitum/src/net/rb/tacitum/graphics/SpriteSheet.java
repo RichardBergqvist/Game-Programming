@@ -41,6 +41,8 @@ public class SpriteSheet {
 	public static SpriteSheet skeleton_left      = new SpriteSheet(skeleton, 2, 0, 1, 3, 64);
 	public static SpriteSheet skeleton_right     = new SpriteSheet(skeleton, 3, 0, 1, 3, 64);
 	
+	public static SpriteSheet space 			 = new SpriteSheet("/textures/blocks/space.png", 48);
+	
 	private Sprite[] sprites;
 	
 	public SpriteSheet(String path, int size) {

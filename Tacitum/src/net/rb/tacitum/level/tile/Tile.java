@@ -2,6 +2,8 @@ package net.rb.tacitum.level.tile;
 
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
+import net.rb.tacitum.level.tile.space.TileSpaceFloor;
+import net.rb.tacitum.level.tile.space.TileSpaceWall;
 import net.rb.tacitum.level.tile.spawn_level.SpawnFloorTile;
 import net.rb.tacitum.level.tile.spawn_level.SpawnGrassTile;
 import net.rb.tacitum.level.tile.spawn_level.SpawnHedgeTile;
@@ -25,14 +27,10 @@ public class Tile {
 	public static Tile spawn_wall4_tile = new SpawnWallTile(Sprite.spawn_wall4);
 	public static Tile spawn_floor_tile = new SpawnFloorTile(Sprite.spawn_floor);
 	
-	public final static int col_spawn_grass = 0xFF00FF00;
-	public final static int col_spawn_hedge = 0xFF007F0E;
-	public final static int col_spawn_water = 0xFF0094FF;
-	public final static int col_spawn_wall1 = 0xFF808080;
-	public final static int col_spawn_wall2 = 0xFF303030;
-	public final static int col_spawn_wall3 = 0xFF404040;
-	public final static int col_spawn_wall4 = 0xFF5B5B5B;
-	public final static int col_spawn_floor = 0xFF724715;
+	public static Tile space_floor = new TileSpaceFloor(Sprite.space_floor);
+	public static Tile space_wall = new TileSpaceWall(Sprite.space_wall);
+	public static Tile space_wall1 = new TileSpaceWall(Sprite.space_wall1);
+	public static Tile space_tile = new VoidTile(Sprite.space_tile);
 	
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;

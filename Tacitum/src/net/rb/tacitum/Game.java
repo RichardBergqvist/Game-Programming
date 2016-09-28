@@ -44,9 +44,9 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static final String TITLE = "Tacitum";
 	
 	/** These strings should be changed every time the game updates, as they contain all version info. **/
-	public static final String VERSION = "Pre-Alpha 5.00";
-	public static final String RELEASE_DATE = "Sep 4 2016";
-	public static final String RELEASE_TIME = "17:00:00";
+	public static final String VERSION = "Pre-Alpha 6.00";
+	public static final String RELEASE_DATE = "Sep 28 2016";
+	public static final String RELEASE_TIME = "13:17:00";
 	
 	/** These strings should not change as they do not hold version info. **/
 	public static final String RELEASE = "(" + RELEASE_DATE + "/" + RELEASE_TIME + ")[PUBLIC]";
@@ -83,12 +83,12 @@ public class Game extends Canvas implements Runnable, EventListener {
 			
 		}
 		
-		TCDatabase db = TCDatabase.deserializeFromFile("res/data/screen.bin");
+		TCDatabase db = TCDatabase.deserializeFromFile("res/bin/screen.bin");
 		//client.send(db);
 		
-		level = Level.spawn;
+		level = Level.SPACE;
 		addLayer(level);
-		TileCoordinate playerSpawn = new TileCoordinate(20, 57);
+		TileCoordinate playerSpawn = new TileCoordinate(63, 103);
 		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
 		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
 		level.addPlayer(player);
@@ -104,7 +104,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	}
 	
 	private void setSize() {
-		TCDatabase db = TCDatabase.deserializeFromFile("res/data/screen.bin");
+		TCDatabase db = TCDatabase.deserializeFromFile("res/bin/screen.bin");
 		if (db != null) {
 			TCObject object = db.findObject("Resolution");
 			width = object.findField("width").getInt();
@@ -127,7 +127,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 		object.addField(TCField.Int("scale", scale));
 		db.addObject(object);
 		
-		db.serializeToFile("res/data/screen.bin");
+		db.serializeToFile("res/bin/screen.bin");
 	}
 	
 	public static int getWindowWidth() {

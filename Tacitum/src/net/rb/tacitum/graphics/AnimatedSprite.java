@@ -24,6 +24,10 @@ public class AnimatedSprite extends Sprite {
 		}
 	}
 	
+	public int getLength() {
+		return length;
+	}
+	
 	public Sprite getSprite() {
 		return sprite;
 	}

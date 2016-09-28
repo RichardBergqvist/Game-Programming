@@ -34,6 +34,12 @@ public class Sprite {
 	public static Sprite particle_water = new Sprite(3, 0x0094FF);  
 	public static Sprite particle_water1 = new Sprite(3, 0x3DAEFF);  
 	
+	/** Space Level Sprites **/
+	public static Sprite space_wall = new Sprite(16, 0, 0, SpriteSheet.space);
+	public static Sprite space_wall1 = new Sprite(16, 1, 0, SpriteSheet.space);
+	public static Sprite space_floor = new Sprite(16, 2, 0, SpriteSheet.space);
+	public static Sprite space_tile = new Sprite(16, 0);
+	
 	protected Sprite(SpriteSheet sheet, int width, int height) {
 		this.SIZE = (width == height) ? width : -1;
 		this.width = width;
