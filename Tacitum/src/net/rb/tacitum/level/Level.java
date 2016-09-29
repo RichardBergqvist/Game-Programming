@@ -273,14 +273,15 @@ public class Level extends Layer {
 		return result;
 	}
 	
-	public Tile getTile(int x, int y) {
-		
+	private Tile void_tile;
+	public Tile getTile(int x, int y) {	
 		if (this == SPACE) {
 			if (x < 0 || y < 0 || x >= width || y >= height) return Tile.space_tile;
 			if (tiles[x + y * width] == SpaceLevel.col_space_wall) return Tile.space_wall;
 			if (tiles[x + y * width] == SpaceLevel.col_space_wall1) return Tile.space_wall1;
 			if (tiles[x + y * width] == SpaceLevel.col_space_star) return Tile.grass;
 			if (tiles[x + y * width] == SpaceLevel.col_space_floor) return Tile.space_floor;
+			void_tile = Tile.space_tile;
 		}
 		
 		if (this == SPAWN) {
@@ -293,7 +294,8 @@ public class Level extends Layer {
 			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall3) return Tile.spawn_wall3_tile;
 			if (tiles[x + y * width] == SpawnLevel.col_spawn_wall4) return Tile.spawn_wall4_tile;
 			if (tiles[x + y * width] == SpawnLevel.col_spawn_floor) return Tile.spawn_floor_tile;
+			void_tile = Tile.void_tile;
 		}
-		return Tile.void_tile;
+		return void_tile;
 	}
 }

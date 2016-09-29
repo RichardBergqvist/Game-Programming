@@ -44,7 +44,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static final String TITLE = "Tacitum";
 	
 	/** These strings should be changed every time the game updates, as they contain all version info. **/
-	public static final String VERSION = "Pre-Alpha 6.00";
+	public static final String VERSION = "Pre-Alpha 6.0";
 	public static final String RELEASE_DATE = "Sep 28 2016";
 	public static final String RELEASE_TIME = "13:17:00";
 	
@@ -86,9 +86,13 @@ public class Game extends Canvas implements Runnable, EventListener {
 		TCDatabase db = TCDatabase.deserializeFromFile("res/bin/screen.bin");
 		//client.send(db);
 		
+		int xCoord = 0, yCoord = 0;
 		level = Level.SPACE;
 		addLayer(level);
-		TileCoordinate playerSpawn = new TileCoordinate(63, 103);
+		if (level == Level.SPAWN) { xCoord = 19; yCoord = 56; }
+		if (level == Level.SPACE) { xCoord = 63; yCoord = 103; }
+		TileCoordinate playerSpawn = new TileCoordinate(xCoord, yCoord);
+		
 		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
 		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
 		level.addPlayer(player);
