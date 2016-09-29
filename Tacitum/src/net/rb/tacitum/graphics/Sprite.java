@@ -39,6 +39,7 @@ public class Sprite {
 	public static Sprite space_wall1 = new Sprite(16, 1, 0, SpriteSheet.space);
 	public static Sprite space_floor = new Sprite(16, 2, 0, SpriteSheet.space);
 	public static Sprite space_tile = new Sprite(16, 0);
+	public static Sprite star = new Sprite(16, 0, 1, SpriteSheet.star);
 	
 	protected Sprite(SpriteSheet sheet, int width, int height) {
 		this.SIZE = (width == height) ? width : -1;

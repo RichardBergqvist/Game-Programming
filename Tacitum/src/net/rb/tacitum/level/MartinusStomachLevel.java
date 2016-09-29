@@ -23,4 +23,4 @@ public class MartinusStomachLevel extends Level {
 			System.out.println("Exception: Could not load level file!");
 		}
 	}
-}
+} 

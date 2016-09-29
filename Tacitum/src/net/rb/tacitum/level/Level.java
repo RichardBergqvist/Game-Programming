@@ -279,7 +279,7 @@ public class Level extends Layer {
 			if (x < 0 || y < 0 || x >= width || y >= height) return Tile.space_tile;
 			if (tiles[x + y * width] == SpaceLevel.col_space_wall) return Tile.space_wall;
 			if (tiles[x + y * width] == SpaceLevel.col_space_wall1) return Tile.space_wall1;
-			if (tiles[x + y * width] == SpaceLevel.col_space_star) return Tile.grass;
+			if (tiles[x + y * width] == SpaceLevel.col_space_star) return Tile.space_star;
 			if (tiles[x + y * width] == SpaceLevel.col_space_floor) return Tile.space_floor;
 			void_tile = Tile.space_tile;
 		}

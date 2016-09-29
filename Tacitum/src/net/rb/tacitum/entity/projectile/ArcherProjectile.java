@@ -43,9 +43,9 @@ public class ArcherProjectile extends Projectile {
 	
 	// TODO: Add different sprites
 	public enum Type {
-		WOOD("water", Sprite.archer),
+		WOOD("wood", Sprite.archer),
 		FIRE("fire", Sprite.archer),
-		POISON("air", Sprite.archer);
+		POISON("poison", Sprite.archer);
 		
 		private String name;
 		private Sprite sprite;

@@ -42,6 +42,7 @@ public class SpriteSheet {
 	public static SpriteSheet skeleton_right     = new SpriteSheet(skeleton, 3, 0, 1, 3, 64);
 	
 	public static SpriteSheet space 			 = new SpriteSheet("/textures/blocks/space.png", 48);
+	public static SpriteSheet star				 = new SpriteSheet("/textures/blocks/star.png", 16, 48);
 	
 	private Sprite[] sprites;
 	

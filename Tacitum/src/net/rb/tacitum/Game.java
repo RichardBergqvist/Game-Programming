@@ -12,9 +12,9 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import net.rb.tacitum.entity.mob.player.Archer;
+import net.rb.tacitum.entity.mob.player.Mage;
 import net.rb.tacitum.entity.mob.player.Player;
-import net.rb.tacitum.entity.projectile.ArcherProjectile;
+import net.rb.tacitum.entity.projectile.WizardProjectile;
 import net.rb.tacitum.events.Event;
 import net.rb.tacitum.events.EventListener;
 import net.rb.tacitum.graphics.Screen;
@@ -94,8 +94,8 @@ public class Game extends Canvas implements Runnable, EventListener {
 		if (level == Level.SPACE) { xCoord = 63; yCoord = 103; }
 		TileCoordinate playerSpawn = new TileCoordinate(xCoord, yCoord);
 		
-		player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
-		//player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
+		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
+		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
 		level.addPlayer(player);
 		level.addPlayer(new PlayerMP());
 	

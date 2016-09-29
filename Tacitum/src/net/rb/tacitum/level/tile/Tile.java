@@ -3,6 +3,7 @@ package net.rb.tacitum.level.tile;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 import net.rb.tacitum.level.tile.space.TileSpaceFloor;
+import net.rb.tacitum.level.tile.space.TileSpaceStar;
 import net.rb.tacitum.level.tile.space.TileSpaceWall;
 import net.rb.tacitum.level.tile.spawn_level.SpawnFloorTile;
 import net.rb.tacitum.level.tile.spawn_level.SpawnGrassTile;
@@ -31,6 +32,7 @@ public class Tile {
 	public static Tile space_wall = new TileSpaceWall(Sprite.space_wall);
 	public static Tile space_wall1 = new TileSpaceWall(Sprite.space_wall1);
 	public static Tile space_tile = new VoidTile(Sprite.space_tile);
+	public static Tile space_star = new TileSpaceStar(Sprite.star);
 	
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;
