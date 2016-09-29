@@ -8,7 +8,6 @@ import javax.imageio.ImageIO;
 
 import net.rb.tacitum.Game;
 import net.rb.tacitum.entity.projectile.ArcherProjectile;
-import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.ui.UIActionListener;
 import net.rb.tacitum.graphics.ui.UIButton;
 import net.rb.tacitum.graphics.ui.UIButtonListener;
@@ -63,8 +62,8 @@ public class Archer extends Player {
 		imageHover = null;
 		
 		try {
-			image = ImageIO.read(new File("res/textures/misc/exit.png"));
-			imageHover = ImageIO.read(new File("res/textures/misc/exit_open.png"));
+			image = ImageIO.read(new File("res/textures/exit.png"));
+			imageHover = ImageIO.read(new File("res/textures/exit_open.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -164,10 +163,5 @@ public class Archer extends Player {
 	
 	public ArcherProjectile.Type getProjectileType() {
 		return type;
-	}
-	
-	public void render(Screen screen) {
-		sprite = playerSprite.getSprite();
-		screen.renderMob(x - 16, y - 16, sprite);
 	}
 }

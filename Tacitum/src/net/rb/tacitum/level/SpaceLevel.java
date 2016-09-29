@@ -5,9 +5,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import net.rb.tacitum.graphics.Font;
-import net.rb.tacitum.graphics.Screen;
-
 public class SpaceLevel extends Level {
 	public final static int col_space_floor = 0xFF808080;
 	public final static int col_space_wall = 0xFF404040;
@@ -16,12 +13,6 @@ public class SpaceLevel extends Level {
 	
 	public SpaceLevel(String path) {
 		super(path);
-	}
-	
-	public static void renderText(Screen screen) {
-		Font font = new Font();
-		font.render(63, 103, "LIANG", screen);
-		
 	}
 	
 	protected void loadLevel(String path) {

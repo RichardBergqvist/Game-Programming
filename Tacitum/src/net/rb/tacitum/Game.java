@@ -12,9 +12,9 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import net.rb.tacitum.entity.mob.player.Archer;
+import net.rb.tacitum.entity.mob.player.Mage;
 import net.rb.tacitum.entity.mob.player.Player;
-import net.rb.tacitum.entity.projectile.ArcherProjectile;
+import net.rb.tacitum.entity.projectile.WizardProjectile;
 import net.rb.tacitum.events.Event;
 import net.rb.tacitum.events.EventListener;
 import net.rb.tacitum.graphics.Screen;
@@ -23,7 +23,6 @@ import net.rb.tacitum.graphics.ui.UIManager;
 import net.rb.tacitum.input.Keyboard;
 import net.rb.tacitum.input.Mouse;
 import net.rb.tacitum.level.Level;
-import net.rb.tacitum.level.SpaceLevel;
 import net.rb.tacitum.level.TileCoordinate;
 import net.rb.tacitum.net.Client;
 import net.rb.tacitum.net.player.PlayerMP;
@@ -45,9 +44,9 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static final String TITLE = "Tacitum";
 	
 	/** These strings should be changed every time the game updates, as they contain all version info. **/
-	public static final String VERSION = "Pre-Alpha 6.1";
-	public static final String RELEASE_DATE = "Sep 29 2016";
-	public static final String RELEASE_TIME = "11:08:00";
+	public static final String VERSION = "Pre-Alpha 6.0";
+	public static final String RELEASE_DATE = "Sep 28 2016";
+	public static final String RELEASE_TIME = "13:17:00";
 	
 	/** These strings should not change as they do not hold version info. **/
 	public static final String RELEASE = "(" + RELEASE_DATE + "/" + RELEASE_TIME + ")[PUBLIC]";
@@ -94,8 +93,8 @@ public class Game extends Canvas implements Runnable, EventListener {
 		if (level == Level.SPACE) { xCoord = 63; yCoord = 103; }
 		TileCoordinate playerSpawn = new TileCoordinate(xCoord, yCoord);
 		
-		player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
-		//player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
+		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
+		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
 		level.addPlayer(player);
 		level.addPlayer(new PlayerMP());
 	
@@ -186,7 +185,6 @@ public class Game extends Canvas implements Runnable, EventListener {
 				delta--;
 			}	
 			render();
-			SpaceLevel.renderText(screen);
 			frames++;
 	
 			if (System.currentTimeMillis() - timer > 1000) {
@@ -248,7 +246,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 			g.drawString(VERSION_INFORMATION_STRING, 0, 500);
 		}
 		g.dispose();
-		bs.show();		
+		bs.show();
 	}
 	
 	public static void main(String[] args) {
