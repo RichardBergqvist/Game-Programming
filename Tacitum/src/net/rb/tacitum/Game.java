@@ -65,7 +65,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	
 	private int fps = 0;
 	
-	private Screen screen;
+	private static Screen screen;
 	private BufferedImage image;
 	private int[] pixels;
 	
@@ -145,6 +145,10 @@ public class Game extends Canvas implements Runnable, EventListener {
 	
 	public static UIManager getUIManager() {
 		return uiManager;
+	}
+	
+	public static Screen getScreen() {
+		return screen;
 	}
 	
 	public void addLayer(Layer layer) {
