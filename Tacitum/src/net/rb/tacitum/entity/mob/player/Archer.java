@@ -19,6 +19,11 @@ import net.rb.tacitum.input.Keyboard;
 import net.rb.tacitum.input.Mouse;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ *  @author Richard Bergqvist
+ *  @since Pre-Alpha 4.0
+ *  @category Entities
+ * **/
 public class Archer extends Player {
 	private ArcherProjectile.Type type;
 	private int fireRate;

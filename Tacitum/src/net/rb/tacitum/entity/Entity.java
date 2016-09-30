@@ -6,6 +6,11 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 import net.rb.tacitum.level.Level;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public class Entity {
 	protected int x, y;
 	protected Sprite sprite;

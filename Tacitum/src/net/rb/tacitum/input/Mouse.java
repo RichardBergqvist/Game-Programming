@@ -9,6 +9,11 @@ import net.rb.tacitum.events.types.MouseMovedEvent;
 import net.rb.tacitum.events.types.MousePressedEvent;
 import net.rb.tacitum.events.types.MouseReleasedEvent;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 3.0
+ * @category Controls
+ * **/
 public class Mouse implements MouseListener, MouseMotionListener {
 	private static int mouseX = MouseEvent.NOBUTTON;
 	private static int mouseY = MouseEvent.NOBUTTON;

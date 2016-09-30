@@ -1,5 +1,10 @@
 package net.rb.tacitum.graphics;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 7.5
+ * @category Graphics
+ * **/
 public class AnimatedSprite extends Sprite {
 	private int frame = 0;
 	private Sprite sprite;

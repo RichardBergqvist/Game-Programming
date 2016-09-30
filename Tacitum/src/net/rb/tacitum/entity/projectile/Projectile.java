@@ -5,6 +5,11 @@ import java.util.Random;
 import net.rb.tacitum.entity.Entity;
 import net.rb.tacitum.graphics.Sprite;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 8.5
+ * @category Entities
+ * **/
 public abstract class Projectile extends Entity {
 	protected Sprite sprite;
 	protected final double xOrigin, yOrigin;

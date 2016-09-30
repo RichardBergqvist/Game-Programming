@@ -2,6 +2,11 @@ package net.rb.tacitum.util;
 
 import net.rb.tacitum.graphics.Screen;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 2.0
+ * @category Utils
+ */
 public class Debug {
 	private Debug() {
 		

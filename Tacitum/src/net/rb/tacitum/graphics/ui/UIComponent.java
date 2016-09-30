@@ -5,6 +5,11 @@ import java.awt.Graphics;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIComponent {
 	public Vector2i position, size;
 	protected Vector2i offset;

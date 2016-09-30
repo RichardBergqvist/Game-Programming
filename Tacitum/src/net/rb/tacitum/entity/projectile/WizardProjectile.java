@@ -4,8 +4,14 @@ import net.rb.tacitum.entity.spawner.ParticleSpawner;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 8.5
+ * @category Entities
+ * **/
 public class WizardProjectile extends Projectile {
 	public static final int FIRE_RATE = 20;
+	private Type type;
 	
 	public WizardProjectile(double x, double y, double dir, Type type) {
 		super(x, y, dir);
@@ -13,6 +19,8 @@ public class WizardProjectile extends Projectile {
 		speed = 5;
 		damage = 20;
 		sprite = type.getSprite();
+		this.type = type;
+		if (type.getSprite() == Sprite.wizard_fire) sprite = Sprite.rotate(type.getSprite(), angle);
 		
 		nx = speed * Math.cos(angle);
 		ny = speed * Math.sin(angle);
@@ -21,8 +29,20 @@ public class WizardProjectile extends Projectile {
 	// TODO: Fix different particles for different projectiles
 	public void update() {
 		if (level.tileCollision((int) (x + nx), (int) (y + ny), 8, 4, 4)) {
-			level.add(new ParticleSpawner((int) x, (int) y, 30, 30, level, Sprite.particle_water));
-			level.add(new ParticleSpawner((int) x, (int) y, 30, 20, level, Sprite.particle_water1));
+			if (type == Type.WATER) {
+				level.add(new ParticleSpawner((int) x, (int) y, 30, 30, level, Sprite.particle_water));
+				level.add(new ParticleSpawner((int) x, (int) y, 30, 20, level, Sprite.particle_water1));
+			}
+			if (type == Type.FIRE) {
+				level.add(new ParticleSpawner((int) x, (int) y, 30, 30, level, Sprite.particle_fire));
+				level.add(new ParticleSpawner((int) x, (int) y, 30, 20, level, Sprite.particle_fire1));
+			}
+			if (type == Type.AIR) {
+				
+			}
+			if (type == Type.EARTH) {
+				
+			}
 			remove();
 		}
 		move();

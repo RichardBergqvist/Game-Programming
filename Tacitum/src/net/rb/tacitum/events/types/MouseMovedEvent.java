@@ -2,6 +2,11 @@ package net.rb.tacitum.events.types;
 
 import net.rb.tacitum.events.Event;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Events
+ * **/
 public class MouseMovedEvent extends Event {
 	private int x, y;
 	private boolean dragged;

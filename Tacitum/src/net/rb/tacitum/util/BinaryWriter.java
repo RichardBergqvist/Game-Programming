@@ -4,6 +4,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Richard Bergqvist
+ * @since Pre-Alpha 3.0
+ * @category Serialization
+ * **/
 public class BinaryWriter {
 	private List<Byte> buffer;
 	

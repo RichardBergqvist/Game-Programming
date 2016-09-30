@@ -5,8 +5,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import net.rb.tacitum.entity.mob.*;
-
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 8.0
+ * @category Mapping
+ * **/
 public class SpawnLevel extends Level {
 	public final static int col_spawn_grass = 0xFF00FF00;
 	public final static int col_spawn_hedge = 0xFF007F0E;

@@ -4,6 +4,11 @@ import net.rb.tacitum.entity.Entity;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 8.5
+ * @category Entities
+ * **/
 public class Particle extends Entity {
 	private Sprite sprite;
 	

@@ -1,5 +1,10 @@
 package net.rb.tacitum.graphics;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.0
+ * @category Graphics
+ * **/
 public class Font {
 	private static SpriteSheet font = new SpriteSheet("/textures/font/font.png", 16);
 	private static Sprite[] characters = Sprite.split(font);

@@ -4,6 +4,11 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 import net.rb.tacitum.level.tile.Tile;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 6.3
+ * @category Tile
+ * **/
 public class SpawnGrassTile extends Tile {
 	public SpawnGrassTile(Sprite sprite) {
 		super(sprite);

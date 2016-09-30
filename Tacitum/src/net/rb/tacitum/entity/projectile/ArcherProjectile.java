@@ -3,6 +3,11 @@ package net.rb.tacitum.entity.projectile;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.Sprite;
 
+/**
+ * @author Richard Berqvist
+ * @since Pre-Alpha 4.5
+ * @category Entities
+ * **/
 public class ArcherProjectile extends Projectile {
 	public static final int FIRE_RATE = 80;
 	

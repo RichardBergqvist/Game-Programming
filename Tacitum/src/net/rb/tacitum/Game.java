@@ -31,6 +31,11 @@ import net.rb.tacitumcloud.serialization.TCDatabase;
 import net.rb.tacitumcloud.serialization.TCField;
 import net.rb.tacitumcloud.serialization.TCObject;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 0.1
+ * @category Game-Core
+ * **/
 public class Game extends Canvas implements Runnable, EventListener {
 	/** This line has no effect on the game whatsoever. **/
 	private static final long serialVersionUID = 1L;	
@@ -45,9 +50,9 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static final String TITLE = "Tacitum";
 	
 	/** These strings should be changed every time the game updates, as they contain all version info. **/
-	public static final String VERSION = "Pre-Alpha 6.1";
-	public static final String RELEASE_DATE = "Sep 29 2016";
-	public static final String RELEASE_TIME = "11:08:00";
+	public static final String VERSION = "Pre-Alpha 6.2";
+	public static final String RELEASE_DATE = "Sep 30 2016";
+	public static final String RELEASE_TIME = "10:08:00";
 	
 	/** These strings should not change as they do not hold version info. **/
 	public static final String RELEASE = "(" + RELEASE_DATE + "/" + RELEASE_TIME + ")[PUBLIC]";
@@ -95,7 +100,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 		TileCoordinate playerSpawn = new TileCoordinate(xCoord, yCoord);
 		
 		//player = new Archer("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, ArcherProjectile.Type.WOOD);
-		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.WATER);
+		player = new Mage("Tacitum", playerSpawn.getX(), playerSpawn.getY(), key, WizardProjectile.Type.FIRE);
 		level.addPlayer(player);
 		level.addPlayer(new PlayerMP());
 	
@@ -157,7 +162,6 @@ public class Game extends Canvas implements Runnable, EventListener {
 	
 	public synchronized void start() {
 		running = true;
-		
 		thread = new Thread(this, "Display");
 		thread.start();
 	}

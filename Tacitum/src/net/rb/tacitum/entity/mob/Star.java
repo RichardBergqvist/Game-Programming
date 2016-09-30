@@ -8,6 +8,11 @@ import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.level.Node;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public class Star extends Mob {
 	private AnimatedSprite star_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
 	private AnimatedSprite star_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);

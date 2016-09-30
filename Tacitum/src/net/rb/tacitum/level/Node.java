@@ -2,6 +2,11 @@ package net.rb.tacitum.level;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Bergqvist
+ * @since Pre-Alpha 2.0
+ * @category AI
+ * **/
 public class Node {
 	public Vector2i tile;
 	public Node parent;

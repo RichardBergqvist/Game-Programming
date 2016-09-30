@@ -1,5 +1,10 @@
 package net.rb.tacitum.events;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Events
+ * **/
 public class EventDispatcher {
 	private Event event;
 	

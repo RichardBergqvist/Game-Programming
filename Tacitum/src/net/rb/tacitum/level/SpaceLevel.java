@@ -8,6 +8,11 @@ import javax.imageio.ImageIO;
 import net.rb.tacitum.graphics.Font;
 import net.rb.tacitum.graphics.Screen;
 
+/**
+ * @author Richard Bergqvist, Waincai Liang
+ * @since Pre-Alpha 5.0
+ * @category Mapping
+ * **/
 public class SpaceLevel extends Level {
 	public final static int col_space_floor = 0xFF808080;
 	public final static int col_space_wall = 0xFF404040;

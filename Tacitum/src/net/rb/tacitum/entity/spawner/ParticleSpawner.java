@@ -4,6 +4,11 @@ import net.rb.tacitum.entity.particle.Particle;
 import net.rb.tacitum.graphics.Sprite;
 import net.rb.tacitum.level.Level;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 8.5
+ * @category Entities
+ * **/
 public class ParticleSpawner extends Spawner {
 	protected int life;
 	

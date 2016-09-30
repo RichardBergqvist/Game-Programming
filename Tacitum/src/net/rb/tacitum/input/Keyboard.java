@@ -3,6 +3,11 @@ package net.rb.tacitum.input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 3.0
+ * @category Controls
+ * **/
 public class Keyboard implements KeyListener {
 	private boolean[] keys = new boolean[120];
 	public boolean up, down, left, right;

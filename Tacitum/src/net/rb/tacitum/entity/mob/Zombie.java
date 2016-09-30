@@ -8,6 +8,11 @@ import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.level.Node;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since Pre-Alpha 5.5
+ * @category Entities
+ * **/
 public class Zombie extends Mob {
 	private AnimatedSprite zombie_down  = new AnimatedSprite(SpriteSheet.zombie_down, 32, 32, 3);
 	private AnimatedSprite zombie_up    = new AnimatedSprite(SpriteSheet.zombie_up, 32, 32, 3);

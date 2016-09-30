@@ -17,6 +17,11 @@ import net.rb.tacitum.graphics.layers.Layer;
 import net.rb.tacitum.level.tile.Tile;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 3.0
+ * @category Mapping
+ * **/
 public class Level extends Layer {
 	protected int width, height;
 	protected int[] tilesInt;

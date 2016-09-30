@@ -5,6 +5,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * @author Richard Bergqvist
+ * @since 6.1
+ * @category Mapping
+ */
 public class MartinusStomachLevel extends Level {
 	public MartinusStomachLevel(String path) {
 		super(path);

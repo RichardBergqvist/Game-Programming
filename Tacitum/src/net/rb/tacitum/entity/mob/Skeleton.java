@@ -8,6 +8,11 @@ import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.level.Node;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since Pre-Alpha 5.5
+ * @category Entities
+ * **/
 public class Skeleton extends Mob {
 	private AnimatedSprite skeleton_down  = new AnimatedSprite(SpriteSheet.skeleton_down, 64, 64, 3);
 	private AnimatedSprite skeleton_up    = new AnimatedSprite(SpriteSheet.skeleton_up, 64, 64, 3);

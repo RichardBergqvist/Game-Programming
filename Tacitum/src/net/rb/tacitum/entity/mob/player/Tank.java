@@ -17,6 +17,11 @@ import net.rb.tacitum.graphics.ui.UIProgressBar;
 import net.rb.tacitum.input.Keyboard;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ *  @author Richard Bergqvist
+ *  @since Pre-Alpha 4.0
+ *  @category Entities
+ * **/
 public class Tank extends Player {
 	public Tank(String name, int x, int y, Keyboard input) {
 		super(name, PlayerClass.TANK.getPlayerClass(), x, y, input);

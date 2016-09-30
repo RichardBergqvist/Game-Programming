@@ -7,6 +7,11 @@ import java.util.List;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIPanel extends UIComponent {
 	private List<UIComponent> components = new ArrayList<UIComponent>();
 	

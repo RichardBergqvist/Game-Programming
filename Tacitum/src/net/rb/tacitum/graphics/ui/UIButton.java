@@ -10,6 +10,11 @@ import java.awt.image.BufferedImage;
 import net.rb.tacitum.input.Mouse;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIButton extends UIComponent {
 	public UILabel label;
 	private UIButtonListener buttonListener;

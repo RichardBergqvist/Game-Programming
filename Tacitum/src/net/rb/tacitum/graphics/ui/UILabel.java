@@ -6,6 +6,11 @@ import java.awt.Graphics;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UILabel extends UIComponent {
 	public String text;
 	private Font font;

@@ -19,6 +19,11 @@ import net.rb.tacitum.graphics.ui.UIProgressBar;
 import net.rb.tacitum.input.Keyboard;
 import net.rb.tacitum.input.Mouse;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public class Player extends Mob implements EventListener {	
 	private String name;
 	private String playerClass;

@@ -6,6 +6,11 @@ import java.awt.image.BufferedImage;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIImage extends UIComponent {
 	private Image image;
 	

@@ -1,5 +1,10 @@
 package net.rb.tacitum.util;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 1.0
+ * @category Maths / Utils
+ * **/
 public class Vector2i {
 	public int x, y;
 	

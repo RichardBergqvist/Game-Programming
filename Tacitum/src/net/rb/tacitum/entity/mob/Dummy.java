@@ -4,6 +4,11 @@ import net.rb.tacitum.graphics.AnimatedSprite;
 import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 6.0
+ * @category Entities
+ * **/
 public class Dummy extends Mob {
 	private AnimatedSprite dummy_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
 	private AnimatedSprite dummy_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);

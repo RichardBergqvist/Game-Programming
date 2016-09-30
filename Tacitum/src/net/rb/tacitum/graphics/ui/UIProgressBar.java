@@ -7,6 +7,11 @@ import org.w3c.dom.ranges.RangeException;
 
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIProgressBar extends UIComponent {
 	private double progress;
 	

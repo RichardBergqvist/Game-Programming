@@ -1,5 +1,10 @@
 package net.rb.tacitum.level;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 1.0
+ * @category Mapping
+ * **/
 public class TileCoordinate {
 	private int x, y;
 	private final int TILE_SIZE = 16;

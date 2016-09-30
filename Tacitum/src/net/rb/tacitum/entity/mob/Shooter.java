@@ -12,6 +12,11 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public class Shooter extends Mob {
 	private AnimatedSprite shooter_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);
 	private AnimatedSprite shooter_up    = new AnimatedSprite(SpriteSheet.player_up, 32, 32, 3);

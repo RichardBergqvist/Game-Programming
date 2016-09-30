@@ -10,6 +10,11 @@ import java.net.UnknownHostException;
 import net.rb.tacitum.util.BinaryWriter;
 import net.rb.tacitumcloud.serialization.TCDatabase;
 
+/**
+ * @author Richard Bergqvist
+ * @since Pre-Alpha 1.0
+ * @category Multiplayer
+ * **/
 public class Client {
 	private final static byte[] PACKET_HEADER = new byte[] { 0x40, 0x40 };
 	private final static byte PACKET_TYPE_CONNECT = 0x01;

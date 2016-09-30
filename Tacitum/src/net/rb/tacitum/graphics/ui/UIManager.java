@@ -4,6 +4,11 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 10.5
+ * @category Graphics
+ * **/
 public class UIManager {
 	private List<UIPanel> panels = new ArrayList<UIPanel>();
 	

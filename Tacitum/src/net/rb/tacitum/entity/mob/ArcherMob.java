@@ -9,6 +9,11 @@ import net.rb.tacitum.graphics.Screen;
 import net.rb.tacitum.graphics.SpriteSheet;
 import net.rb.tacitum.util.Vector2i;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public class ArcherMob extends Mob {
 	// TODO: Replace with archer sprites 
 	private AnimatedSprite archer_down  = new AnimatedSprite(SpriteSheet.player_down, 32, 32, 3);

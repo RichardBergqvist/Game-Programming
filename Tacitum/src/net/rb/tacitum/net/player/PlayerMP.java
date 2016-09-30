@@ -3,6 +3,11 @@ package net.rb.tacitum.net.player;
 import net.rb.tacitum.entity.mob.Mob;
 import net.rb.tacitum.graphics.Screen;
 
+/**
+ * @author Richard Bergqvist
+ * @since Pre-Alpha 1.0
+ * @category Multiplayer
+ * **/
 public class PlayerMP extends Mob {
 	public PlayerMP() {
 		this.x = 22 * 16;

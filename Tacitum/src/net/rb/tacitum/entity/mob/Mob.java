@@ -4,6 +4,11 @@ import net.rb.tacitum.entity.Entity;
 import net.rb.tacitum.entity.projectile.Projectile;
 import net.rb.tacitum.graphics.Screen;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 5.5
+ * @category Entities
+ * **/
 public abstract class Mob extends Entity {
 	protected boolean moving = false;
 	protected boolean walking = false;

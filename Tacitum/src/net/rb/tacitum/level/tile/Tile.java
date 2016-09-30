@@ -11,6 +11,11 @@ import net.rb.tacitum.level.tile.spawn_level.SpawnHedgeTile;
 import net.rb.tacitum.level.tile.spawn_level.SpawnWallTile;
 import net.rb.tacitum.level.tile.spawn_level.SpawnWaterTile;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 6.0
+ * @category Tile
+ * **/
 public class Tile {
 	public Sprite sprite;
 	

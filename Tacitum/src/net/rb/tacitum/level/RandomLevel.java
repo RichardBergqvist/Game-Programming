@@ -2,6 +2,11 @@ package net.rb.tacitum.level;
 
 import java.util.Random;
 
+/**
+ * @author Richard Bergqvist
+ * @since In-Development 7.9
+ * @category Mapping
+ * **/
 public class RandomLevel extends Level {
 	private static final Random random = new Random();
 	

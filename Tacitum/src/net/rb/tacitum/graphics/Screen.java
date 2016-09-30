@@ -10,6 +10,11 @@ import net.rb.tacitum.entity.mob.Star;
 import net.rb.tacitum.entity.projectile.Projectile;
 import net.rb.tacitum.level.tile.Tile;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 0.1
+ * @category Game-Core, Graphics
+ * **/
 public class Screen {
 	public int width, height;
 	public int pixels[];

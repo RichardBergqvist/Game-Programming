@@ -5,6 +5,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 0.4
+ * @category Graphics
+ * **/
 public class SpriteSheet {
 	private String path;
 	public final int SIZE;

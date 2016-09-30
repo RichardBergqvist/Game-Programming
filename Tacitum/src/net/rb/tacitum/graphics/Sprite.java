@@ -1,5 +1,10 @@
 package net.rb.tacitum.graphics;
 
+/**
+ * @author Richard Berqvist
+ * @since In-Development 0.4
+ * @category Graphics
+ * **/
 public class Sprite {
 	public final int SIZE;
 	private int x, y;
@@ -33,6 +38,8 @@ public class Sprite {
 	/** Particle Sprites **/
 	public static Sprite particle_water = new Sprite(3, 0x0094FF);  
 	public static Sprite particle_water1 = new Sprite(3, 0x3DAEFF);  
+	public static Sprite particle_fire = new Sprite(3, 0xFF0000);
+	public static Sprite particle_fire1 = new Sprite(3, 0xFF6A00);
 	
 	/** Space Level Sprites **/
 	public static Sprite space_wall = new Sprite(16, 0, 0, SpriteSheet.space);
